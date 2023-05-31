@@ -1,1 +1,0 @@
-print('Glory to Ukraine')
