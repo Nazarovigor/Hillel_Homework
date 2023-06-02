@@ -1,2 +1,0 @@
-Function launched at 2023-05-15 19:09:47.320522 with result 14
-Function launched at 2023-05-15 19:09:49.322140 with result Your args should be numbers only!!!
