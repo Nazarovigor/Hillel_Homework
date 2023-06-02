@@ -1,13 +1,14 @@
 import argparse
-import re
 import requests
+from bs4 import BeautifulSoup
+from urllib.parse import urljoin
 
 
 class UrlAnalyzer:
     def __new__(cls, *args, **kwargs):
         analyzer = super().__new__(cls)
         if not args and not kwargs:
-            analyzer.url = 'https://' + cls.user_input()
+            analyzer.url = cls.user_input()
         return analyzer
 
     def __init__(self, url=None):
@@ -23,13 +24,17 @@ class UrlAnalyzer:
         if args.url:
             return args.url
         else:
-            url = input('Please set the URL for parsing: https://')
-            return url
+            url = input('Please set the URL for parsing starting from http or https: ')
+            if url.startswith('http://') or url.startswith('https://'):
+                return url
+            else:
+                print('Invalid URL format. Please start with http:// or https://')
+                return UrlAnalyzer.user_input()
 
     def get_links_from_url(self, url):
         response = requests.get(url)
         if response.status_code == 200:
-            return self.link_analyzer.extract_links(response.text)
+            return self.link_analyzer.extract_links(response.text, url)
         else:
             print(f"Failed to fetch the page. Status code: {response.status_code}")
             return []
@@ -37,11 +42,27 @@ class UrlAnalyzer:
     def get_valid_links(self, links):
         return self.link_analyzer.valid_links(links)
 
+    @staticmethod
+    def links_writer(valid_links, not_valid_links):
+        with open("valid_links.txt", "w") as valid_file:
+            valid_file.write("\n".join(valid_links))
+
+        with open("broken_links.txt", "w") as broken_file:
+            broken_file.write("\n".join(not_valid_links))
+
 
 class LinkAnalyzer:
+    def extract_links(self, text, base_url):
+        soup = BeautifulSoup(text, 'html.parser')
+        links = []
 
-    def extract_links(self, text):
-        return re.findall(r'https?:\/\/\S+', text)
+        for link in soup.find_all('a'):
+            href = link.get('href')
+            if href:
+                full_url = urljoin(base_url, href)  # Объединение относительной ссылки с базовым URL
+                links.append(full_url)
+
+        return links
 
     @staticmethod
     def valid_links(links):
@@ -58,15 +79,11 @@ class LinkAnalyzer:
 
 if __name__ == "__main__":
     try:
-        url_analyzer = UrlAnalyzer()
-        links = url_analyzer.get_links_from_url(url_analyzer.url)
-        valid_links, not_valid_links = url_analyzer.get_valid_links(links)
-
-        with open("valid_links.txt", "w") as valid_file:
-            valid_file.write("\n".join(valid_links))
-
-        with open("broken_links.txt", "w") as broken_file:
-            broken_file.write("\n".join(not_valid_links))
+        links = UrlAnalyzer().get_links_from_url(UrlAnalyzer().url)
+        valid_links, not_valid_links = UrlAnalyzer().get_valid_links(links)
+        UrlAnalyzer().links_writer(valid_links, not_valid_links)
     except requests.exceptions.ConnectionError:
-        print('It seems you entered wrong site')
+        print('It seems you entered the wrong site')
+    except requests.exceptions.InvalidURL:
+        print('It seems you entered the wrong site')
 
