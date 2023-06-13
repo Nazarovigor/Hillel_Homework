@@ -79,9 +79,10 @@ class LinkAnalyzer:
 
 if __name__ == "__main__":
     try:
-        links = UrlAnalyzer().get_links_from_url(UrlAnalyzer().url)
-        valid_links, not_valid_links = UrlAnalyzer().get_valid_links(links)
-        UrlAnalyzer().links_writer(valid_links, not_valid_links)
+        analizer = UrlAnalyzer()
+        links = analizer.get_links_from_url(analizer.url)
+        valid_links, not_valid_links = analizer.get_valid_links(links)
+        analizer.links_writer(valid_links, not_valid_links)
     except requests.exceptions.ConnectionError:
         print('It seems you entered the wrong site')
     except requests.exceptions.InvalidURL:
