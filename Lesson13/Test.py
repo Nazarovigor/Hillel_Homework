@@ -3,7 +3,7 @@ import re
 import PyPDF2 as PyPDF2
 import requests
 import os
-import  logging
+import logging
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
@@ -29,13 +29,15 @@ class SourceAnalyzer:
                             help='Please set the URL for parsing starting from http or https')
         parser.add_argument('-pdf', '--PDF', type=str, default=None, help='Please set the path to pdf file')
         args = parser.parse_args()
+        logging.info('start enter parametr.')
         if args.URL:
+            logging.info('The recieve URL')
             return args.URL
         elif args.PDF:
+            logging.info('The recieve PDF')
             return args.PDF
         else:
-            logging.info('The user did not enter parametr.')
-            print("You didn't enter any arguments")
+            return None
 
 
     def get_links_from_url(self, url):
@@ -132,6 +134,9 @@ if __name__ == "__main__":
             links = analizer.get_links_from_pdf(analizer.param)
             valid_links, not_valid_links = analizer.get_valid_links(links)
             analizer.links_writer(valid_links, not_valid_links)
+        elif analizer.param is None:
+            logging.critical('The user did not enter a parameter')
+            print('You did not enter any arguments')
         else:
             logging.critical('The user did not enter parametr or entered wrong data')
             print('Invalid URL format or path to pdf file')
@@ -142,4 +147,7 @@ if __name__ == "__main__":
     except requests.exceptions.InvalidURL:
         logging.critical('Not valid URL', exc_info=True)
         print('It seems you entered the wrong site')
+    except AttributeError:
+        logging.critical('No attribute', exc_info=True)
+        print('It seems you did not enter the attribute')
 
