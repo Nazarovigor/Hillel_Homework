@@ -3,7 +3,7 @@ URL Analyzer is a tool for analyzing URLs and extracting links from web pages. T
 
 ## Installation
 1. Install the dependencies by running: pip install -r requirements.txt.
-2. Run the program by executing: python main.py -url <URL>, where <URL> is the URL to analyze.
+2. Run the program by executing: python Test.py -url or -pdf, where <url> is the URL to analyze <pdf> path to pdf file
 ## Usage
 URL Analyzer offers the following features:
 

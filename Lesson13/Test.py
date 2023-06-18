@@ -1,42 +1,58 @@
 import argparse
+import re
+import PyPDF2 as PyPDF2
 import requests
+import os
+import  logging
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
 
-class UrlAnalyzer:
+logging.basicConfig(filename='myLog.log', filemode='w', level=logging.INFO,
+                    format='%(asctime)s -- %(levelname)s -- %(message)s')
+
+class SourceAnalyzer:
     def __new__(cls, *args, **kwargs):
         analyzer = super().__new__(cls)
         if not args and not kwargs:
-            analyzer.url = cls.user_input()
+            logging.info(f'user enters parametr')
+            analyzer.param = cls.user_input()
         return analyzer
 
-    def __init__(self, url=None):
-        if url:
-            self.url = url
+    def __init__(self):
         self.link_analyzer = LinkAnalyzer()
 
     @staticmethod
     def user_input():
         parser = argparse.ArgumentParser()
-        parser.add_argument('-url', type=str, help='Please set the URL for parsing')
+        parser.add_argument('-url', '--URL', type=str, default=None,
+                            help='Please set the URL for parsing starting from http or https')
+        parser.add_argument('-pdf', '--PDF', type=str, default=None, help='Please set the path to pdf file')
         args = parser.parse_args()
-        if args.url:
-            return args.url
+        if args.URL:
+            return args.URL
+        elif args.PDF:
+            return args.PDF
         else:
-            url = input('Please set the URL for parsing starting from http or https: ')
-            if url.startswith('http://') or url.startswith('https://'):
-                return url
-            else:
-                print('Invalid URL format. Please start with http:// or https://')
-                return UrlAnalyzer.user_input()
+            logging.info('The user did not enter parametr.')
+            print("You didn't enter any arguments")
+
 
     def get_links_from_url(self, url):
         response = requests.get(url)
         if response.status_code == 200:
-            return self.link_analyzer.extract_links(response.text, url)
+            return self.link_analyzer.extract_links_form_url(response.text, url)
         else:
+            logging.critical('Not valid URL', exc_info=True)
             print(f"Failed to fetch the page. Status code: {response.status_code}")
+            return []
+
+    def get_links_from_pdf(self, path):
+        if os.path.isfile(path):
+            return self.link_analyzer.extract_links_from_pdf(path)
+        else:
+            logging.critical('Invalid path to pdf file', exc_info=True)
+            print('Invalid path to pdf file')
             return []
 
     def get_valid_links(self, links):
@@ -52,7 +68,7 @@ class UrlAnalyzer:
 
 
 class LinkAnalyzer:
-    def extract_links(self, text, base_url):
+    def extract_links_form_url(self, text, base_url):
         soup = BeautifulSoup(text, 'html.parser')
         links = []
 
@@ -64,27 +80,66 @@ class LinkAnalyzer:
 
         return links
 
+    def extract_links_from_pdf(self, path):
+        with open(path, 'rb') as file:
+            logging.info('Start extracting lnks from pdf')
+            pdf_reader = PyPDF2.PdfReader(file)
+            links = []
+
+            for page in range(len(pdf_reader.pages)):
+                current_page = pdf_reader.pages[page]
+                page_text = current_page.extract_text()
+                page_text = page_text.split(' ')
+                page_text = ''.join(page_text)
+                url_pattern = re.compile(r'(https?://\S+[^\s\"\)\,\.])')
+                found_urls = re.findall(url_pattern, page_text)
+                links.extend(found_urls)
+
+            return links
+
     @staticmethod
     def valid_links(links):
         valid_links = []
         not_valid_links = []
         for link in links:
-            response = requests.get(link)
-            if response.status_code == 200:
-                valid_links.append(link)
-            else:
+            try:
+                response = requests.get(link)
+                if response.status_code == 200:
+                    logging.info('Writing url to valid')
+                    valid_links.append(link)
+                else:
+                    logging.info('Writing url to not valid')
+                    not_valid_links.append(link)
+            except requests.exceptions.ConnectionError:
+                logging.warning('ConnectionError, writing url to not valid')
+                not_valid_links.append(link)
+            except requests.exceptions.InvalidURL:
+                logging.warning('InvalidURL, writing url to not valid')
                 not_valid_links.append(link)
         return valid_links, not_valid_links
 
 
 if __name__ == "__main__":
     try:
-        analizer = UrlAnalyzer()
-        links = analizer.get_links_from_url(analizer.url)
-        valid_links, not_valid_links = analizer.get_valid_links(links)
-        analizer.links_writer(valid_links, not_valid_links)
+        analizer = SourceAnalyzer()
+        if analizer.param.startswith('http://') or analizer.param.startswith('https://'):
+            logging.info('start parsing url')
+            links = analizer.get_links_from_url(analizer.param)
+            valid_links, not_valid_links = analizer.get_valid_links(links)
+            analizer.links_writer(valid_links, not_valid_links)
+        elif os.path.isfile(analizer.param):
+            logging.info('start parsing pdf')
+            links = analizer.get_links_from_pdf(analizer.param)
+            valid_links, not_valid_links = analizer.get_valid_links(links)
+            analizer.links_writer(valid_links, not_valid_links)
+        else:
+            logging.critical('The user did not enter parametr or entered wrong data')
+            print('Invalid URL format or path to pdf file')
+
     except requests.exceptions.ConnectionError:
+        logging.critical('ConnectionError', exc_info=True)
         print('It seems you entered the wrong site')
     except requests.exceptions.InvalidURL:
+        logging.critical('Not valid URL', exc_info=True)
         print('It seems you entered the wrong site')
 
