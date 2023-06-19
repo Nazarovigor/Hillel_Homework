@@ -122,32 +122,46 @@ class LinkAnalyzer:
 
 
 if __name__ == "__main__":
-    try:
-        analizer = SourceAnalyzer()
-        if analizer.param.startswith('http://') or analizer.param.startswith('https://'):
-            logging.info('start parsing url')
-            links = analizer.get_links_from_url(analizer.param)
-            valid_links, not_valid_links = analizer.get_valid_links(links)
-            analizer.links_writer(valid_links, not_valid_links)
-        elif os.path.isfile(analizer.param):
-            logging.info('start parsing pdf')
-            links = analizer.get_links_from_pdf(analizer.param)
-            valid_links, not_valid_links = analizer.get_valid_links(links)
-            analizer.links_writer(valid_links, not_valid_links)
-        elif analizer.param is None:
-            logging.critical('The user did not enter a parameter')
-            print('You did not enter any arguments')
-        else:
-            logging.critical('The user did not enter parametr or entered wrong data')
-            print('Invalid URL format or path to pdf file')
+    analizer = None  # Инициализируем переменную analizer
+    while analizer is None:
+        if analizer is None:
+            analizer = SourceAnalyzer()  # Вызываем метод user_input() из класса SourceAnalyzer
+            if analizer.param is None:
+                print("Вы не ввели аргументы. Попробуйте снова.")
+                analizer.param = input('Введите параметры: ')
+                if analizer.param != "":
+                    continue
 
-    except requests.exceptions.ConnectionError:
-        logging.critical('ConnectionError', exc_info=True)
-        print('It seems you entered the wrong site')
-    except requests.exceptions.InvalidURL:
-        logging.critical('Not valid URL', exc_info=True)
-        print('It seems you entered the wrong site')
-    except AttributeError:
-        logging.critical('No attribute', exc_info=True)
-        print('It seems you did not enter the attribute')
+        try:
+            if analizer.param.startswith('http://') or analizer.param.startswith('https://'):
+                logging.info('start parsing url')
+                links = analizer.get_links_from_url(analizer.param)
+                valid_links, not_valid_links = analizer.get_valid_links(links)
+                analizer.links_writer(valid_links, not_valid_links)
+                break
+            elif os.path.isfile(analizer.param):
+                logging.info('start parsing pdf')
+                links = analizer.get_links_from_pdf(analizer.param)
+                valid_links, not_valid_links = analizer.get_valid_links(links)
+                analizer.links_writer(valid_links, not_valid_links)
+                break
+            elif analizer.param == "":
+                logging.critical('The user did not enter a parameter')
+                print('Вы не ввели никаких аргументов')
+            else:
+                logging.critical('The user did not enter parameter or entered wrong data')
+                print('Некорректный формат URL или путь к файлу PDF')
+                analizer.param = None  # Сбрасываем параметр для повторного ввода
 
+        except requests.exceptions.ConnectionError:
+            logging.critical('ConnectionError', exc_info=True)
+            print('Похоже, вы ввели неправильный сайт')
+            break
+        except requests.exceptions.InvalidURL:
+            logging.critical('Not valid URL', exc_info=True)
+            print('Похоже, вы ввели неправильный сайт')
+            break
+        except AttributeError:
+            logging.critical('No attribute', exc_info=True)
+            print('Похоже, вы не ввели атрибут')
+            analizer = None

@@ -1,1 +1,20 @@
-2023-06-18 19:41:38,563 -- INFO -- user enters parametr
+2023-06-19 13:07:56,600 -- INFO -- user enters parametr
+2023-06-19 13:07:56,602 -- INFO -- start enter parametr.
+2023-06-19 13:07:56,602 -- INFO -- The recieve PDF
+2023-06-19 13:07:56,602 -- INFO -- start parsing pdf
+2023-06-19 13:07:56,603 -- INFO -- Start extracting lnks from pdf
+2023-06-19 13:07:56,743 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:57,012 -- INFO -- Writing url to valid
+2023-06-19 13:07:57,208 -- INFO -- Writing url to valid
+2023-06-19 13:07:57,758 -- INFO -- Writing url to valid
+2023-06-19 13:07:57,785 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:57,812 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:57,834 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:58,018 -- INFO -- Writing url to valid
+2023-06-19 13:07:58,227 -- INFO -- Writing url to not valid
+2023-06-19 13:07:58,251 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:58,273 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:58,293 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:58,514 -- INFO -- Writing url to valid
+2023-06-19 13:07:58,532 -- WARNING -- ConnectionError, writing url to not valid
+2023-06-19 13:07:59,011 -- INFO -- Writing url to valid
