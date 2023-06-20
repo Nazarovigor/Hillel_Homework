@@ -122,14 +122,15 @@ class LinkAnalyzer:
 
 
 if __name__ == "__main__":
-    analizer = None  # Инициализируем переменную analizer
-    while analizer is None:
+    analizer = None
+    while True:
         if analizer is None:
-            analizer = SourceAnalyzer()  # Вызываем метод user_input() из класса SourceAnalyzer
+            analizer = SourceAnalyzer()
             if analizer.param is None:
                 print("Вы не ввели аргументы. Попробуйте снова.")
                 analizer.param = input('Введите параметры: ')
-                if analizer.param != "":
+                if analizer.param == "":
+                    analizer = None
                     continue
 
         try:
@@ -151,7 +152,7 @@ if __name__ == "__main__":
             else:
                 logging.critical('The user did not enter parameter or entered wrong data')
                 print('Некорректный формат URL или путь к файлу PDF')
-                analizer.param = None  # Сбрасываем параметр для повторного ввода
+                analizer = None  # Сбрасываем analizer на None, чтобы повторно предложить ввести аргумент
 
         except requests.exceptions.ConnectionError:
             logging.critical('ConnectionError', exc_info=True)
@@ -165,3 +166,4 @@ if __name__ == "__main__":
             logging.critical('No attribute', exc_info=True)
             print('Похоже, вы не ввели атрибут')
             analizer = None
+
