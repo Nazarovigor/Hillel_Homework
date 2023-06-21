@@ -11,6 +11,7 @@ from urllib.parse import urljoin
 logging.basicConfig(filename='myLog.log', filemode='w', level=logging.INFO,
                     format='%(asctime)s -- %(levelname)s -- %(message)s')
 
+
 class SourceAnalyzer:
     def __new__(cls, *args, **kwargs):
         analyzer = super().__new__(cls)
