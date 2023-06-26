@@ -1,5 +1,6 @@
 import pytest
-from analizer import SourceAnalyzer
+from .analizer import SourceAnalyzer
+
 
 @pytest.fixture
 def source_analyzer():
