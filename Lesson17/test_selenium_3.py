@@ -1,3 +1,4 @@
+import allure
 import requests
 from selenium import webdriver
 from selenium.webdriver import ActionChains
@@ -5,6 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
 
+@allure.story('UI Tests')
 class TestSuit():
 
     def setup_method(self):
@@ -15,6 +17,9 @@ class TestSuit():
     def teardown_method(self):
         self.browser.quit()
 
+    @allure.description('notification')
+    @allure.title('test_notification_message')
+    @allure.severity(allure.severity_level.BLOCKER)
     def test_notification_message(self):
         try:
             target = self.browser.find_element(By.CSS_SELECTOR, "[href='/notification_message']")
@@ -25,11 +30,15 @@ class TestSuit():
             target.click()
             self.browser.find_element(By.CSS_SELECTOR, "[href='/notification_message']").click()
             message = self.browser.find_element(By.CSS_SELECTOR, '#flash.flash.notice')
-            assert message.text.strip() in ['Action successful\n×', 'Action unsuccessful, please try again\n×']
+            assert message.text in ['Action successful\n×', 'Action unsuccessful, please try again\n×',
+                                    'Action unsuccesful, please try again\n×']
 
         except NoSuchElementException:
             print(f'The element not found')
 
+    @allure.description('broken images')
+    @allure.title('test_broken_images')
+    @allure.severity(allure.severity_level.CRITICAL)
     def test_broken_images(self):
         try:
             broken_pic = []

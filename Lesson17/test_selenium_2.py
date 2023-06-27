@@ -1,3 +1,4 @@
+import allure
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -15,6 +16,9 @@ class TestSuit():
     def teardown_method(self):
         self.browser.quit()
 
+    @allure.description('Input')
+    @allure.title('test_text_input')
+    @allure.severity(allure.severity_level.NORMAL)
     def test_text_input(self):
         try:
             key = 'Ivan'
@@ -30,6 +34,9 @@ class TestSuit():
         except NoSuchElementException:
             print(f'The element not found')
 
+    @allure.description('Overlapping')
+    @allure.title('test_overlapped_element')
+    @allure.severity(allure.severity_level.BLOCKER)
     def test_overlapped_element(self):
         try:
             key = 'Vova'

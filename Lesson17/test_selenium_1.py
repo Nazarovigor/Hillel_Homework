@@ -1,3 +1,4 @@
+import  allure
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
@@ -14,6 +15,9 @@ class TestUi():
     def teardown_method(self):
         self.driver.quit()
 
+    @allure.description('Home button')
+    @allure.title('test_home_button_is_present')
+    @allure.severity(allure.severity_level.NORMAL)
     def test_home_button_is_present(self):
 
         try:
@@ -22,6 +26,9 @@ class TestUi():
         except NoSuchElementException:
             print(f'The element not found')
 
+    @allure.description('Customer button')
+    @allure.title('test_customer_login_button_is_present')
+    @allure.severity(allure.severity_level.NORMAL)
     def test_customer_login_button_is_present(self):
 
         try:
@@ -31,6 +38,9 @@ class TestUi():
         except NoSuchElementException:
             print(f'The element not found')
 
+    @allure.description('Manager button')
+    @allure.title('test_bank_manager_login_button_is_present')
+    @allure.severity(allure.severity_level.NORMAL)
     def test_bank_manager_ligin_button_is_present(self):
 
         try:
