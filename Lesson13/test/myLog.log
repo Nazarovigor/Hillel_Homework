@@ -1,105 +1,41 @@
-2023-07-03 15:51:29,000 -- INFO -- user enters parametr
-2023-07-03 15:51:29,001 -- INFO -- start enter parametr.
-2023-07-03 15:51:29,796 -- INFO -- user enters parametr
-2023-07-03 15:51:29,797 -- INFO -- start enter parametr.
-2023-07-03 15:51:29,798 -- INFO -- Start extracting lnks from pdf
-2023-07-03 15:51:29,984 -- INFO -- user enters parametr
-2023-07-03 15:51:29,985 -- INFO -- start enter parametr.
-2023-07-03 15:51:31,133 -- INFO -- Writing url to valid
-2023-07-03 15:51:32,849 -- INFO -- Writing url to valid
-2023-07-03 15:51:34,068 -- INFO -- Writing url to valid
-2023-07-03 15:51:34,424 -- INFO -- Writing url to valid
-2023-07-03 15:51:35,105 -- INFO -- Writing url to valid
-2023-07-03 15:51:35,972 -- INFO -- Writing url to valid
-2023-07-03 15:51:36,779 -- INFO -- Writing url to valid
-2023-07-03 15:51:37,409 -- INFO -- Writing url to valid
-2023-07-03 15:51:37,907 -- INFO -- Writing url to valid
-2023-07-03 15:51:38,370 -- INFO -- Writing url to valid
-2023-07-03 15:51:38,843 -- INFO -- Writing url to valid
-2023-07-03 15:51:39,832 -- INFO -- Writing url to valid
-2023-07-03 15:51:40,457 -- INFO -- Writing url to valid
-2023-07-03 15:51:40,795 -- INFO -- Writing url to valid
-2023-07-03 15:51:41,411 -- INFO -- Writing url to valid
-2023-07-03 15:51:41,998 -- INFO -- Writing url to valid
-2023-07-03 15:51:42,028 -- INFO -- user enters parametr
-2023-07-03 15:51:42,029 -- INFO -- start enter parametr.
-2023-07-03 15:51:42,030 -- INFO -- Start extracting lnks from pdf
-2023-07-03 15:51:42,295 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:42,571 -- INFO -- Writing url to valid
-2023-07-03 15:51:42,735 -- INFO -- Writing url to valid
-2023-07-03 15:51:43,525 -- INFO -- Writing url to valid
-2023-07-03 15:51:43,547 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:43,568 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:43,589 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:43,785 -- INFO -- Writing url to valid
-2023-07-03 15:51:43,975 -- INFO -- Writing url to not valid
-2023-07-03 15:51:43,995 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:44,017 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:44,036 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:44,247 -- INFO -- Writing url to valid
-2023-07-03 15:51:44,292 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:44,807 -- INFO -- Writing url to valid
-2023-07-03 15:51:44,810 -- INFO -- user enters parametr
-2023-07-03 15:51:44,811 -- INFO -- start enter parametr.
-2023-07-03 15:51:44,812 -- INFO -- Start extracting lnks from pdf
-2023-07-03 15:51:44,963 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:45,198 -- INFO -- Writing url to valid
-2023-07-03 15:51:45,390 -- INFO -- Writing url to valid
-2023-07-03 15:51:45,901 -- INFO -- Writing url to valid
-2023-07-03 15:51:45,909 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:45,913 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:45,917 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:46,089 -- INFO -- Writing url to valid
-2023-07-03 15:51:46,304 -- INFO -- Writing url to not valid
-2023-07-03 15:51:46,308 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:46,311 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:46,314 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:46,505 -- INFO -- Writing url to valid
-2023-07-03 15:51:46,511 -- WARNING -- ConnectionError, writing url to not valid
-2023-07-03 15:51:47,014 -- INFO -- Writing url to valid
-2023-07-03 15:51:47,021 -- INFO -- user enters parametr
-2023-07-03 15:51:47,022 -- INFO -- start enter parametr.
-2023-07-03 15:51:48,258 -- INFO -- Writing url to valid
-2023-07-03 15:51:48,576 -- INFO -- Writing url to valid
-2023-07-03 15:51:48,874 -- INFO -- Writing url to valid
-2023-07-03 15:51:49,164 -- INFO -- Writing url to not valid
-2023-07-03 15:51:49,451 -- INFO -- Writing url to not valid
-2023-07-03 15:51:49,734 -- INFO -- Writing url to not valid
-2023-07-03 15:51:50,057 -- INFO -- Writing url to valid
-2023-07-03 15:51:50,064 -- INFO -- user enters parametr
-2023-07-03 15:51:50,065 -- INFO -- start enter parametr.
-2023-07-03 15:51:51,224 -- INFO -- Writing url to valid
-2023-07-03 15:51:52,917 -- INFO -- Writing url to valid
-2023-07-03 15:51:53,468 -- INFO -- Writing url to valid
-2023-07-03 15:51:53,866 -- INFO -- Writing url to valid
-2023-07-03 15:51:54,429 -- INFO -- Writing url to valid
-2023-07-03 15:51:55,226 -- INFO -- Writing url to valid
-2023-07-03 15:51:56,032 -- INFO -- Writing url to valid
-2023-07-03 15:51:56,671 -- INFO -- Writing url to valid
-2023-07-03 15:51:57,154 -- INFO -- Writing url to valid
-2023-07-03 15:51:57,649 -- INFO -- Writing url to valid
-2023-07-03 15:51:58,136 -- INFO -- Writing url to valid
-2023-07-03 15:51:59,248 -- INFO -- Writing url to valid
-2023-07-03 15:51:59,848 -- INFO -- Writing url to valid
-2023-07-03 15:52:00,182 -- INFO -- Writing url to valid
-2023-07-03 15:52:00,815 -- INFO -- Writing url to valid
-2023-07-03 15:52:01,396 -- INFO -- Writing url to valid
-2023-07-03 15:52:01,408 -- INFO -- user enters parametr
-2023-07-03 15:52:01,410 -- INFO -- start enter parametr.
-2023-07-03 15:52:02,572 -- INFO -- Writing url to valid
-2023-07-03 15:52:04,264 -- INFO -- Writing url to valid
-2023-07-03 15:52:05,402 -- INFO -- Writing url to valid
-2023-07-03 15:52:05,765 -- INFO -- Writing url to valid
-2023-07-03 15:52:07,570 -- INFO -- Writing url to valid
-2023-07-03 15:52:08,368 -- INFO -- Writing url to valid
-2023-07-03 15:52:09,188 -- INFO -- Writing url to valid
-2023-07-03 15:52:09,877 -- INFO -- Writing url to valid
-2023-07-03 15:52:10,395 -- INFO -- Writing url to valid
-2023-07-03 15:52:10,863 -- INFO -- Writing url to valid
-2023-07-03 15:52:11,363 -- INFO -- Writing url to valid
-2023-07-03 15:52:12,384 -- INFO -- Writing url to valid
-2023-07-03 15:52:12,993 -- INFO -- Writing url to valid
-2023-07-03 15:52:13,334 -- INFO -- Writing url to valid
-2023-07-03 15:52:13,998 -- INFO -- Writing url to valid
-2023-07-03 15:52:14,585 -- INFO -- Writing url to valid
-2023-07-03 15:52:15,375 -- INFO -- Start extracting lnks from pdf
+2023-07-03 21:29:54,625 -- INFO -- start get links from url
+2023-07-03 21:29:55,758 -- INFO -- fnish get links from url
+2023-07-03 21:29:55,764 -- INFO -- start get links from pdf
+2023-07-03 21:29:55,765 -- INFO -- Start extracting links from pdf
+2023-07-03 21:29:55,909 -- INFO -- finish get links from pdf
+2023-07-03 21:29:57,468 -- INFO -- Writing url to valid
+2023-07-03 21:29:59,828 -- INFO -- Writing url to valid
+2023-07-03 21:30:00,982 -- INFO -- Writing url to valid
+2023-07-03 21:30:01,409 -- INFO -- Writing url to valid
+2023-07-03 21:30:02,366 -- INFO -- Writing url to valid
+2023-07-03 21:30:03,186 -- INFO -- Writing url to valid
+2023-07-03 21:30:04,307 -- INFO -- Writing url to valid
+2023-07-03 21:30:05,134 -- INFO -- Writing url to valid
+2023-07-03 21:30:05,613 -- INFO -- Writing url to valid
+2023-07-03 21:30:06,223 -- INFO -- Writing url to valid
+2023-07-03 21:30:06,724 -- INFO -- Writing url to valid
+2023-07-03 21:30:08,227 -- INFO -- Writing url to valid
+2023-07-03 21:30:08,862 -- INFO -- Writing url to valid
+2023-07-03 21:30:09,217 -- INFO -- Writing url to valid
+2023-07-03 21:30:10,070 -- INFO -- Writing url to valid
+2023-07-03 21:30:10,973 -- INFO -- Writing url to valid
+2023-07-03 21:30:10,985 -- INFO -- start write
+2023-07-03 21:30:10,988 -- INFO -- finish write
+2023-07-03 21:30:12,567 -- INFO -- Writing url to valid
+2023-07-03 21:30:13,365 -- INFO -- Writing url to valid
+2023-07-03 21:30:14,478 -- INFO -- Writing url to valid
+2023-07-03 21:30:14,835 -- INFO -- Writing url to valid
+2023-07-03 21:30:15,410 -- INFO -- Writing url to valid
+2023-07-03 21:30:16,488 -- INFO -- Writing url to valid
+2023-07-03 21:30:17,313 -- INFO -- Writing url to valid
+2023-07-03 21:30:18,075 -- INFO -- Writing url to valid
+2023-07-03 21:30:18,672 -- INFO -- Writing url to valid
+2023-07-03 21:30:19,167 -- INFO -- Writing url to valid
+2023-07-03 21:30:19,687 -- INFO -- Writing url to valid
+2023-07-03 21:30:21,143 -- INFO -- Writing url to valid
+2023-07-03 21:30:21,796 -- INFO -- Writing url to valid
+2023-07-03 21:30:22,285 -- INFO -- Writing url to valid
+2023-07-03 21:30:22,999 -- INFO -- Writing url to valid
+2023-07-03 21:30:23,763 -- INFO -- Writing url to valid
+2023-07-03 21:30:23,775 -- INFO -- start write
+2023-07-03 21:30:23,779 -- INFO -- finish write

@@ -87,7 +87,7 @@ class LinkAnalyzer:
 
     def extract_links_from_pdf(self, path):
         with open(path, 'rb') as file:
-            logging.info('Start extracting lnks from pdf')
+            logging.info('Start extracting links from pdf')
             pdf_reader = PyPDF2.PdfReader(file)
             links = []
 

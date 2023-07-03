@@ -1,0 +1,109 @@
+INFO     root:my_test.py:14 start get links from url
+INFO     root:my_test.py:16 fnish get links from url
+INFO     root:my_test.py:23 start get links from pdf
+INFO     root:analizer.py:90 Start extracting lnks from pdf
+INFO     root:my_test.py:25 finish get links from pdf
+INFO     root:my_test.py:32 start get valid links from url
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:my_test.py:35 finish get valid links from url
+INFO     root:analizer.py:90 Start extracting lnks from pdf
+INFO     root:my_test.py:43 start get valid links from pdf
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:116 Writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:my_test.py:45 finish get valid links from pdf
+INFO     root:analizer.py:90 Start extracting lnks from pdf
+INFO     root:my_test.py:53 start get not valid links from pdf
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:116 Writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+WARNING  root:analizer.py:119 ConnectionError, writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:my_test.py:55 finish get not valid links from pdf
+INFO     root:my_test.py:63 start get not valid links from url
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:116 Writing url to not valid
+INFO     root:analizer.py:116 Writing url to not valid
+INFO     root:analizer.py:116 Writing url to not valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:my_test.py:65 finish get not valid links from url
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:my_test.py:74 start write
+INFO     root:my_test.py:76 finish write
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:analizer.py:113 Writing url to valid
+INFO     root:my_test.py:85 start write
+INFO     root:my_test.py:87 finish write
+INFO     root:my_test.py:95 start extract links from url
+INFO     root:my_test.py:97 finish extract links from url
+INFO     root:my_test.py:104 start extract links from pdf
+INFO     root:analizer.py:90 Start extracting lnks from pdf
+INFO     root:my_test.py:106 finish extract links from pdf
