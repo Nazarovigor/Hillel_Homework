@@ -7,7 +7,6 @@ import logging
 from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
-
 logging.basicConfig(filename='myLog.log', filemode='w', level=logging.INFO,
                     format='%(asctime)s -- %(levelname)s -- %(message)s')
 
@@ -20,7 +19,11 @@ class SourceAnalyzer:
             analyzer.param = cls.user_input()
         return analyzer
 
-    def __init__(self):
+    def __init__(self, url=None, pdf=None):
+        if url:
+            self.url = url
+        if pdf:
+            self.pdf = pdf
         self.link_analyzer = LinkAnalyzer()
 
     @staticmethod
@@ -39,7 +42,6 @@ class SourceAnalyzer:
             return args.PDF
         else:
             return None
-
 
     def get_links_from_url(self, url):
         response = requests.get(url)
@@ -167,4 +169,3 @@ if __name__ == "__main__":
             logging.critical('No attribute', exc_info=True)
             print('Похоже, вы не ввели атрибут')
             analizer = None
-
